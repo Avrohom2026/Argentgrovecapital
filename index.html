@@ -2,176 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Argent Grove Capital LLC</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #05070b;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+    body{
+      background:#05070b;
+      color:white;
+      font-family:'Inter',sans-serif;
+      overflow-x:hidden;
     }
 
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
+    .hero{
+      height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url('background.png') center/cover no-repeat;
+        linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.82)),
+        url('background.png');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      display:flex;
+      flex-direction:column;
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.45) 70%);
+    nav{
+      width:100%;
+      padding:28px 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:relative;
+      z-index:5;
     }
 
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      animation: fadeIn 1.8s ease;
+    .logo{
+      font-family:'Cormorant Garamond',serif;
+      font-size:34px;
+      letter-spacing:2px;
+      color:#d4b07b;
     }
 
-    .logo {
-      width: 150px;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 20px rgba(212,175,55,0.25));
+    .nav-links{
+      display:flex;
+      gap:40px;
     }
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(58px, 9vw, 120px);
-      font-weight: 500;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
-      color: #f7f3eb;
+    .nav-links a{
+      text-decoration:none;
+      color:white;
+      font-size:14px;
+      letter-spacing:2px;
+      transition:0.3s;
     }
 
-    .subtitle {
-      color: #c7a96b;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin-bottom: 40px;
+    .nav-links a:hover{
+      color:#d4b07b;
     }
 
-    .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.3;
-      margin-bottom: 30px;
-      color: #ece8df;
+    .hero-content{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
     }
 
-    .description {
-      max-width: 720px;
-      margin: auto;
-      color: rgba(255,255,255,0.75);
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 50px;
+    .hero-content h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:96px;
+      font-weight:400;
+      letter-spacing:4px;
+      margin-bottom:10px;
     }
 
-    .button {
-      display: inline-block;
-      padding: 16px 42px;
-      border: 1px solid rgba(212,175,55,0.7);
-      color: #d4af37;
-      text-decoration: none;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 13px;
-      transition: all 0.35s ease;
-      backdrop-filter: blur(4px);
+    .hero-content h2{
+      color:#d4b07b;
+      letter-spacing:8px;
+      font-weight:300;
+      margin-bottom:35px;
     }
 
-    .button:hover {
-      background: rgba(212,175,55,0.1);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(212,175,55,0.15);
+    .hero-content p{
+      max-width:700px;
+      font-size:20px;
+      line-height:1.7;
+      color:#e0e0e0;
+      margin-bottom:40px;
     }
 
-    .bottom-bar {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.35);
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .hero-button{
+      border:1px solid #d4b07b;
+      padding:16px 42px;
+      color:#d4b07b;
+      text-decoration:none;
+      letter-spacing:3px;
+      transition:0.3s;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    .hero-button:hover{
+      background:#d4b07b;
+      color:black;
+    }
+
+    .section{
+      padding:120px 10%;
+      background:#05070b;
+    }
+
+    .section-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:56px;
+      margin-bottom:30px;
+      color:#d4b07b;
+      text-align:center;
+    }
+
+    .section-text{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+      line-height:1.9;
+      color:#d0d0d0;
+      font-size:18px;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:70px;
+    }
+
+    .feature-card{
+      border:1px solid rgba(212,176,123,0.2);
+      padding:40px;
+      background:rgba(255,255,255,0.02);
+      backdrop-filter:blur(4px);
+      transition:0.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-6px);
+      border-color:#d4b07b;
+    }
+
+    .feature-card h3{
+      color:#d4b07b;
+      margin-bottom:18px;
+      letter-spacing:2px;
+    }
+
+    .feature-card p{
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#888;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+
+      nav{
+        padding:25px;
+        flex-direction:column;
+        gap:20px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
 
-    @media (max-width: 768px) {
-      .description {
-        font-size: 16px;
+      .nav-links{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
-      .logo {
-        width: 120px;
+      .hero-content h1{
+        font-size:58px;
+      }
+
+      .hero-content h2{
+        font-size:18px;
+        letter-spacing:4px;
+      }
+
+      .hero-content p{
+        font-size:17px;
+      }
+
+      .section-title{
+        font-size:42px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <section class="hero">
-    <div class="overlay"></div>
 
-    <div class="content">
+    <nav>
+      <div class="logo">ARGENT GROVE</div>
 
-      <img src="logo.png" alt="Argent Grove Capital Logo" class="logo">
+      <div class="nav-links">
+        <a href="#about">ABOUT</a>
+        <a href="#approach">APPROACH</a>
+        <a href="#investments">INVESTMENTS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
 
+    <div class="hero-content">
       <h1>ARGENT GROVE</h1>
 
-      <div class="subtitle">Capital LLC</div>
+      <h2>CAPITAL LLC</h2>
 
-      <div class="tagline">
-        Capital. Discipline. Long-Term Vision.
-      </div>
+      <p>
+        A proprietary investment firm focused on disciplined capital allocation,
+        long-term thinking, and risk-adjusted returns.
+      </p>
 
-      <div class="description">
-        Argent Grove Capital LLC is a proprietary investment firm focused on disciplined capital allocation, strategic market participation, and long-term compounding through intelligent risk management.
-      </div>
-
-      <a href="mailto:abie@argentgrovecapital.com" class="button">
-        Contact
+      <a href="#about" class="hero-button">
+        OUR APPROACH
       </a>
-
     </div>
 
-    <div class="bottom-bar">
-      EST. 2026 • ARGENT GROVE CAPITAL LLC
-    </div>
   </section>
+
+  <section class="section" id="about">
+
+    <h2 class="section-title">About</h2>
+
+    <p class="section-text">
+      Argent Grove Capital is built on a philosophy of patience,
+      discipline, and concentrated conviction. We believe superior
+      long-term outcomes are achieved through rigorous analysis,
+      thoughtful risk management, and independent thinking.
+    </p>
+
+  </section>
+
+  <section class="section" id="approach">
+
+    <h2 class="section-title">Investment Approach</h2>
+
+    <div class="features">
+
+      <div class="feature-card">
+        <h3>FOCUSED</h3>
+
+        <p>
+          Concentrated strategies built around clarity,
+          conviction, and long-term opportunity.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>DISCIPLINED</h3>
+
+        <p>
+          Risk management remains central to every
+          investment decision and portfolio action.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>GROWTH DRIVEN</h3>
+
+        <p>
+          We seek compounding through patience,
+          quality businesses, and rational capital allocation.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="investments">
+
+    <h2 class="section-title">Research & Insights</h2>
+
+    <p class="section-text">
+      Market commentary, investment research, and strategic perspectives
+      will be published here as the firm expands its public presence.
+    </p>
+
+  </section>
+
+  <section class="section" id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p class="section-text">
+      For inquiries, partnerships, or additional information,
+      please contact:<br><br>
+
+      info@argentgrovecapital.com
+    </p>
+
+  </section>
+
+  <footer>
+    © 2026 Argent Grove Capital LLC. All rights reserved.
+  </footer>
 
 </body>
 </html> 
