@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,6 +16,10 @@
       padding:0;
       box-sizing:border-box;
     }
+    
+    html{
+scroll-behavior:smooth;
+} 
 
     body{
       background:#05070b;
@@ -40,6 +44,9 @@
   background-position:center;
   background-repeat:no-repeat;
 
+  background-attachment:fixed;
+  overflow:hidden;
+
   position:relative;
   display:flex;
   flex-direction:column;
@@ -54,6 +61,8 @@
       align-items:center;
       position:relative;
       z-index:5;
+      backdrop-filter:blur(6px);
+      background:rgba(0,0,0,0.12);
     }
 
     .logo img{
@@ -92,6 +101,7 @@
       align-items:center;
       text-align:center;
       padding:20px;
+      animation:heroFade 2.2s ease;
     }
 
     .hero-crest{  
@@ -101,15 +111,31 @@
       filter:
         drop-shadow(0 0 25px rgba(0,0,0,0.45));
       opacity:0.98;
+      animation:floatCrest 6s ease-in-out infinite;
 } 
 
     .hero-content h1{
       font-family:'Cormorant Garamond',serif;
-      font-size:96px;
-      font-weight:400;
-      letter-spacing:4px;
-      margin-bottom:10px;
-    }
+      font-size:118px;
+      font-weight:500;
+      letter-spacing:8px;
+      line-height:0.95;
+      margin-bottom:12px;
+      background:linear-gradient(
+        to bottom,
+        #fff8e8 0%,
+        #f0d5a5 30%,
+        #d4b07b 58%,
+        #8d673b 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 25px rgba(255,220,170,0.10),
+        0 0 40px rgba(212,176,123,0.08);
+} 
 
     .hero-content h2{
       color:#d4b07b;
@@ -119,11 +145,11 @@
     }
 
     .hero-content p{
-      max-width:700px;
+      max-width:720px;
+      margin:auto;
+      line-height:1.8;
       font-size:20px;
-      line-height:1.7;
-      color:#e0e0e0;
-      margin-bottom:40px;
+      color:rgba(255,255,255,0.92); 
     }
 
     .hero-button{
@@ -132,12 +158,14 @@
       color:#d4b07b;
       text-decoration:none;
       letter-spacing:3px;
-      transition:0.3s;
+      transition:all 0.35s ease;
     }
 
     .hero-button:hover{
       background:#d4b07b;
       color:black;
+      transform:translateY(-3px);
+      box-shadow:0 10px 30px rgba(212,176,123,0.25);
     }
 
     .section{
@@ -147,7 +175,8 @@
 
   opacity:0;
   transform:translateY(60px);
-  transition:all 1.2s ease;
+  transition:all 1.8s
+      cubic-bezier(0.22,1,0.36,1);
 }
 
 .section.show{
@@ -227,6 +256,29 @@ footer p{
     letter-spacing:1px;
     }
 
+    @keyframes floatCrest{
+      0%{
+        transform:translateY(0px);
+    }
+      50%{
+        transform:translateY(-10px);
+    }
+      100%{
+        transform:translateY(0px);
+    }
+}
+
+      @keyframes heroFade{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+      to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+} 
+    
     @media(max-width:900px){
 
       nav{
@@ -335,7 +387,7 @@ footer p{
       
       <h1>ARGENT GROVE</h1>
 
-      <h2>CAPITAL LLC</h2>
+      <h2>CAPITAL</h2>
 
       <p>
         A proprietary investment firm focused on disciplined capital allocation,
