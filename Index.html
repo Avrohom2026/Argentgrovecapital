@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Argent Grove Capital LLC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #05070b;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url('background.jpg') center/cover no-repeat;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.45) 70%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      animation: fadeIn 1.8s ease;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 20px rgba(212,175,55,0.25));
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(58px, 9vw, 120px);
+      font-weight: 500;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+      color: #f7f3eb;
+    }
+
+    .subtitle {
+      color: #c7a96b;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.3;
+      margin-bottom: 30px;
+      color: #ece8df;
+    }
+
+    .description {
+      max-width: 720px;
+      margin: auto;
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 50px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 42px;
+      border: 1px solid rgba(212,175,55,0.7);
+      color: #d4af37;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .button:hover {
+      background: rgba(212,175,55,0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.15);
+    }
+
+    .bottom-bar {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.35);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .description {
+        font-size: 16px;
+      }
+
+      .logo {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+
+      <img src="logo.png" alt="Argent Grove Capital Logo" class="logo">
+
+      <h1>ARGENT GROVE</h1>
+
+      <div class="subtitle">Capital LLC</div>
+
+      <div class="tagline">
+        Capital. Discipline. Long-Term Vision.
+      </div>
+
+      <div class="description">
+        Argent Grove Capital LLC is a proprietary investment firm focused on disciplined capital allocation, strategic market participation, and long-term compounding through intelligent risk management.
+      </div>
+
+      <a href="mailto:abie@argentgrovecapital.com" class="button">
+        Contact
+      </a>
+
+    </div>
+
+    <div class="bottom-bar">
+      EST. 2026 • ARGENT GROVE CAPITAL LLC
+    </div>
+  </section>
+
+</body>
+</html> 
