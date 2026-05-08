@@ -118,7 +118,17 @@
     .section{
       padding:120px 10%;
       background:#05070b;
-    }
+      position:relative;
+
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 1.2s ease;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
     .section-title{
       font-family:'Cormorant Garamond',serif;
@@ -320,5 +330,18 @@
     © 2026 Argent Grove Capital LLC. All rights reserved.
   </footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.section');
+
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
 </body>
 </html> 
