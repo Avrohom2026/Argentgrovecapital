@@ -93,6 +93,15 @@
       padding:20px;
     }
 
+    .hero-crest{  
+      height:170px;
+      width:auto;
+      margin-bottom:30px;
+      filter:
+        drop-shadow(0 0 25px rgba(0,0,0,0.45));
+      opacity:0.98;
+} 
+
     .hero-content h1{
       font-family:'Cormorant Garamond',serif;
       font-size:96px;
@@ -241,14 +250,55 @@ footer p{
 } 
 
       .hero-content h1{
-        font-size:72px;
-        line-height:0.95;
-      }
 
-      .hero-content h2{
-        font-size:18px;
-        letter-spacing:4px;
-      }
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:110px;
+
+    font-weight:500;
+
+    letter-spacing:7px;
+
+    line-height:0.95;
+
+    margin-bottom:10px;
+
+    background:linear-gradient(
+        to bottom,
+        #fff6df 0%,
+        #f1d3a2 28%,
+        #d4b07b 55%,
+        #8f6a3c 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 18px rgba(255,215,170,0.12),
+        0 0 35px rgba(212,176,123,0.08);
+
+    position:relative;
+
+    z-index:5;
+} 
+
+.hero-content h2{
+
+    font-family:'Inter', sans-serif;
+
+    font-size:22px;
+
+    letter-spacing:12px;
+
+    font-weight:300;
+
+    color:#d4b07b;
+
+    margin-bottom:35px;
+
+    text-transform:uppercase;
+} 
 
       .hero-content p{
         font-size:17px;
@@ -279,6 +329,9 @@ footer p{
     </nav>
 
     <div class="hero-content">
+      
+      <img src="crest.png" class="hero-crest" alt="Argent Grove Crest">
+      
       <h1>ARGENT GROVE</h1>
 
       <h2>CAPITAL LLC</h2>
